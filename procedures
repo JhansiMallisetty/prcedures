@@ -1,0 +1,153 @@
+1)
+CREATE OR REPLACE PROCEDURE greetings 
+AS 
+BEGIN 
+   dbms_output.put_line('KLOUDONE!'); 
+END; 
+/
+
+Statement processed.
+
+2)BEGIN
+greetings;
+END
+/
+KLOUDONE!
+
+Statement processed.
+
+
+3)DROP PROCEDURE greetings;
+ 
+Procedure dropped.
+
+
+4)DECLARE 
+   a number; 
+   b number; 
+   c number;
+PROCEDURE findmin(x IN number, y IN number, z OUT number) IS 
+BEGIN 
+   IF x < y THEN 
+      z:= x; 
+   ELSE 
+      z:= y; 
+   END IF; 
+END;   
+BEGIN 
+   a:= 20; 
+   b:= 10; 
+   findMin(a, b, c); 
+   dbms_output.put_line(' Minimum of (20, 10) : ' || c); 
+END; 
+/
+Minimum of (20, 10) : 10
+
+Statement processed.
+
+5)DECLARE 
+   a number; 
+PROCEDURE square(x IN OUT number) IS 
+BEGIN 
+  X := x * x; 
+END;  
+BEGIN 
+   a:= 5; 
+   square(a); 
+   dbms_output.put_line(' Square of (5): ' || a); 
+END; 
+/
+Square of (5): 25
+
+Statement processed.
+
+6)DECLARE
+a number;
+b number;
+c number;
+PROCEDURE addition( x IN number, y IN number, z OUT number) IS
+BEGIN
+   z:=x+y;
+END;
+BEGIN 
+   a:= 20; 
+   b:= 35; 
+   add(a, b, c); 
+   dbms_output.put_line(' Addition of (50, 100) : ' || c); 
+END; 
+/
+
+Addition of (50, 100) : 55
+
+Statement processed.
+
+7)DECLARE
+a number;
+b number;
+c number;
+PROCEDURE multiplivation( x IN number, y IN number, z OUT number) IS
+BEGIN
+   z:=x*y;
+END;
+BEGIN 
+   a:= 5; 
+   b:= 10; 
+   MUL(a, b, c); 
+   dbms_output.put_line(' multiplicatin of (5, 10) : ' || c); 
+END; 
+/
+multiplicatin of (5, 10) : 50
+
+Statement processed.
+
+
+8)DECLARE
+a number;
+b number;
+c number;
+PROCEDURE findmax( x IN number, y IN number, z OUT number) IS
+BEGIN
+  IF x > y THEN
+   z:=x;
+  ELSE
+   z:=y;
+   END IF;
+END;
+BEGIN 
+   a:= 50; 
+   b:= 100; 
+   findMax(a, b, c); 
+   dbms_output.put_line(' Maximum of (50, 100) : ' || c); 
+END; 
+/
+ Maximum of (50, 100) : 100
+
+Statement processed.
+
+9)create table employee(id number(10) primary key,name varchar2(100));
+
+create or replace procedure "INSERTUSER"    
+(id IN NUMBER,    
+name IN VARCHAR2)    
+is    
+begin    
+insert into employee values(id,name);    
+end;    
+/       
+
+Procedure created.
+
+10)BEGIN    
+   insertuser(101,'jhansi');  
+   dbms_output.put_line('record inserted successfully');    
+END;    
+/    
+ID	Name
+101	jhansi
+
+
+
+
+
+
+
